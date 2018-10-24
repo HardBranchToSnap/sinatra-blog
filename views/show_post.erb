@@ -1,0 +1,24 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%=@row['post_title']%></h1>
+  <p class="lead"><%=@row['content']%></p>
+  <hr class="my-4">
+  <p><%=@row['created_date']%></p>
+</div>
+<form action="/p/<%=@row['id']%>" method="POST" role="form">
+ <div class="form-group">
+    <textarea name="comment" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Введите ваш комментарий"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Комментировать</button>
+</form>
+<br>
+  
+  <%@show_comments.each do |comment|%>
+  <div class="card">
+    <div class="card-body">
+      <%=comment['comment']%>
+      <br>
+      <cite title="Source Title" style="font-size: 10px;"><%=comment['created_date']%></cite>
+    </div>
+  </div>
+  <br>
+  <%end%>

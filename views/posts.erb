@@ -1,0 +1,17 @@
+<h1> Posts </h1>
+
+  <% @show_posts.each do |topic| %>
+<div class="card">
+  <div class="card-header">
+    <%=topic['post_title']%>
+  </div>
+  <div class="card-body">
+    <p class="card-text"><%=topic['content']%></p>
+    <p class="card-text"><a href="/p/<%=topic['id']%>"><small class="text-muted">Добавлен <%=topic['created_date']%></small></a></p>
+    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    <button type="button" class="btn btn-outline-success">Годнота</button>
+    <button type="button" class="btn btn-outline-danger">Зэшквэр</button>
+  </div>
+</div>
+<br>
+  <% end %>

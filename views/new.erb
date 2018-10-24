@@ -1,0 +1,22 @@
+<h1> Post your meme ! </h1>
+
+<form action="/new" method="POST">
+  <input name = "post_title" class="form-control form-control-lg" type="text" placeholder="Title of post" value="<%= @post_title %>">
+  <br>
+  <div class="custom-file">
+  <input type="file" class="custom-file-input" id="customFile">
+  <label class="custom-file-label" for="customFile">Choose your meme</label>
+</div>
+<br><br>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Tell something about:</label>
+    <textarea name = "post_text" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="It's not obligatory" value="<%= @content %>"></textarea>
+  </div>
+
+  <select class="custom-select custom-select-lg mb-3">
+  <option selected>This is my meme1!</option>
+  <option value="1">I took it from some place1!</option>
+</select>
+
+  <button type="submit" class="btn btn-outline-success">Send post</button>
+</form>
